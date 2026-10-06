@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cube</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+        }
+
+        .main {
+            height: 300px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            transform: rotateY(240deg) rotateX(-5deg) rotateZ(-155deg);
+            animation: spin 16s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotateY(-360deg) rotateX(-360deg);
+            }
+        }
+
+        .wall {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            border: 5px solid white;
+            box-shadow: inset 0px 0px 1rem;
+            opacity: 0.8;
+            background-size: 100% 100%;
+        }
+
+        .right {
+            background: blue;
+            transform: translateZ(-300px);
+        }
+
+        .left {
+            background-color: crimson;
+        }
+
+        .top {
+            background: violet;
+            transform: rotateX(90deg);
+            transform-origin: bottom;
+        }
+
+        .back {
+            background: greenyellow;
+            transform: translateZ(0px) rotateY(-90deg);
+            transform-origin: right;
+        }
+
+        .bottom {
+            background: grey;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+        }
+
+        .front {
+            background-color: cornflowerblue;
+            transform: rotateY(90deg);
+            transform-origin: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="wall right">
+        </div>
+        <div class="wall left">
+        </div>
+        <div class="wall back">
+        </div>
+        <div class="wall top">
+        </div>
+        <div class="wall front">
+        </div>
+        <div class="wall bottom">
+        </div>
+
+    </div>
+</body>
+
+</html>
